@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { useRef } from 'react'
 import { useState } from 'react'
 import React from 'react'
 import useKey from '../../hooks/UseKey'
@@ -9,7 +7,7 @@ import { GiSwapBag } from 'react-icons/gi';
 
 import './style.scss'
 
-export default function GridMap() {
+export function SnowGroundGridMap() {
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -90,7 +88,7 @@ export default function GridMap() {
 
     
     
-    <div className="grid">
+    <div className="ground-grid">
       <table>
       <tr>
           <td className={`1 1 ${characterPosition === '1 1' ? 'highlight' : ''}`}></td>
@@ -144,7 +142,7 @@ export default function GridMap() {
           <td className={`1 3 ${characterPosition === '1 3' ? 'highlight' : ''}`}></td>
           <td className={`2 3 ${characterPosition === '2 3' ? 'highlight' : ''}`}></td>
           <td className={`3 3 ${characterPosition === '3 3' ? 'highlight' : ''}`}>
-          <button className="planet aros">
+          <button className="planet water">
 
           <Modal
       style={{
@@ -177,7 +175,9 @@ export default function GridMap() {
         // style={customStyles}
         contentLabel="Inventory Modal"
       >
-        <h1>Inventory</h1>
+        <h1 style={{
+          color: '#fff'
+        }}>Water Planet</h1>
         <button onClick={closeModal}>close</button>
       </Modal>
           </button>
@@ -244,7 +244,46 @@ export default function GridMap() {
           <td className={`15 5 ${characterPosition === '15 5' ? 'highlight' : ''}`}></td>
           <td className={`16 5 ${characterPosition === '16 5' ? 'highlight' : ''}`}></td>
           <td className={`17 5 ${characterPosition === '17 5' ? 'highlight' : ''}`}>
-          <button className="planet lyght"></button>
+          <button className="planet snow">
+
+          <Modal
+      style={{
+        overlay: {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0)'
+        },
+        content: {
+          position: 'absolute',
+          top: '60px',
+          left: '20vw',
+          right: '20vw',
+          bottom: '200px',
+          border: '1px solid #ccc',
+          background: 'transparent',
+          overflow: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          borderRadius: '4px',
+          outline: 'none',
+          padding: '20px',
+        }
+      }}
+        isOpen={characterPosition === '17 5'}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        // style={customStyles}
+        contentLabel="Inventory Modal"
+      >
+        <h1 style={{
+          color: '#fff'
+        }}>Snow Planet</h1>
+        <button onClick={closeModal}>close</button>
+      </Modal>
+
+          </button>
           </td>
           <td className={`18 5 ${characterPosition === '18 5' ? 'highlight' : ''}`}></td>
           <td className={`19 5 ${characterPosition === '19 5' ? 'highlight' : ''}`}></td>
