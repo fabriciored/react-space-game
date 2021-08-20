@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
-import { useRef } from 'react'
 import { useState } from 'react'
 import React from 'react'
 import useKey from '../../hooks/UseKey'
 
 import Modal from 'react-modal';
-import { GiSwapBag } from 'react-icons/gi';
 
-import './style.scss'
+import './styles.scss'
+import { Link } from 'react-router-dom';
 
 export default function SpaceGridMap() {
 
@@ -282,7 +280,7 @@ export default function SpaceGridMap() {
         <h1 style={{
           color: '#fff'
         }}>Snow Planet</h1>
-        <button onClick={closeModal}>close</button>
+        <Link to="/planet"><button>Enter Planet</button></Link>
       </Modal>
 
           </button>
