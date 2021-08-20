@@ -1,0 +1,19 @@
+div.action {
+  width: 100%;
+  height: 80px;
+  max-width: 90vw;
+
+  position: absolute;
+
+  display: flex;
+
+  bottom: 5vh;
+
+
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+
+  gap: 10vw;
+}
